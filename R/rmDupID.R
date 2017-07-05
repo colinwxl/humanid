@@ -21,6 +21,7 @@ rmDupID <-function(dup_exprSet){
   exprSet=dup_exprSet[!duplicated(dup_exprSet[,1]),]
   #exprSet=apply(exprSet,2,as.numeric)
   exprSet=exprSet[!is.na(exprSet[,1]),]
+  exprSet=exprSet[exprSet[,1] !='NA',]
   rownames(exprSet)=exprSet[,1]
   exprSet=exprSet[,-1]
   #str(exprSet)
